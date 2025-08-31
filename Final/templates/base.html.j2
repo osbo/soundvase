@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{title}}</title> <!--inherits the title of each page as a parameter in the render template-->
+        {{redirectlink}} <!--for the logout page, inherits a line of html as a parameter in that render template-->
+        <link rel="stylesheet" type="text/css" href="static/style.css" />
+        <script src="static/js/functions.js"></script>
+    </head>
+    <body>
+        {% block body %} {% endblock %} <!--jinja block-->
+    </body>
+</html>

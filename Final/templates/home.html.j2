@@ -1,0 +1,121 @@
+{% extends "base.html.j2" %} <!--inherits the base html skeleton-->
+
+{% block body %}
+
+
+
+<div class="quarterdiv" id="div1">
+    <script id="javascript" src="./static/js/scripts.js" type="module" name="{{name}}" filename="{{filename}}"></script>
+</div>
+
+<form enctype="multipart/form-data" action="home" method="POST">
+
+    <div class="quarterdiv" id="div2">
+        <div class="insidebox">
+            <div id="div6">
+                <p id = header>{{name}} : {{filename}}</p>
+
+                <input id="logout" type="submit" name="log out" value="Log Out" class="button3"> <!--submit button telling the server to log out-->
+
+                <input id="name" type="hidden" name="name" value="{{name}}">
+                <input id="filename" type="hidden" name="filename" value="{{filename}}">
+            </div>
+
+            <div id="div7">
+                <p>Welcome to Soundvase. This website allows users to create 3D "sound vase" sculptures from audio. It projects a sound's waveform over surface of a cylinder, resulting in a texture depending on the characteristics of the sound. Upload a sound in the bottom left to begin. Click and drag to orbit around the model, or scroll to zoom in and out.</p>
+            </div>
+
+            <div id="div5">
+                {% if rows != None %}
+                <table>
+                    <tr>
+                        <th>Past sound vases:</th>
+                        <th>Sound</th>
+                        <th>Frequency</th>
+                        <th>Layers</th>
+                        <th>Radius</th>
+                        <th>Layer Height</th>
+                        <th>Waveforms per layer</th>
+                        <th>Depth of texture</th>
+                    </tr>
+                    {% for row in rows %}
+                    <tr>
+                        <td><button type="submit" name="edit" value="{{row['filename']}}" class="button3">Edit</button></td>
+                        <td>{{row['filename']}}</td>
+                        <td>{{row['frequency']}}</td>
+                        <td>{{row['height']}}</td>
+                        <td>{{row['radius']}}</td>
+                        <td>{{row['layerheight']}}</td>
+                        <td>{{row['perrevolution']}}</td>
+                        <td>{{row['depth']}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <p><a href=".">Create an account</a> to save your sculptures.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="quarterdiv" id="div3">
+        <div class="insidebox">
+            <div id="parameters">
+                <div id="div11">
+                    <p>Sound file:</p>
+                    <p>Automatically find frequency:</p>
+                    <p>Manually define frequency:</p>
+                    <p>Number of layers:</p>
+                    <p>Base radius of sculpture:</p>
+                    <p>Layer height:</p>
+                    <p>Waveforms per layer:</p>
+                    <p>Depth of texture:</p>
+                </div>
+                <div id="div13">
+                    <p><input type="file" name="file"></p>
+                    <p><input type="checkbox" name="autofreq"{{autofreq}} class="checkbox"></p>
+                    <p><input type="number" name="frequency" value="{{frequency}}" step="any" class="button4"></p>
+                    <p><input type="number" name="height" value="{{height}}" class="button4" required></p>
+                    <p><input type="number" name="radius" value="{{radius}}" step="any" class="button4" required></p>
+                    <p><input type="number" name="layerheight" value="{{layerheight}}" step="any" class="button4" required></p>
+                    <p><input type="number" name="perrevolution" value="{{perrevolution}}" class="button4" required></p>
+                    <p><input type="number" name="depth" value="{{depth}}" step="any" class="button4" required></p>
+                </div>
+                <div id="div15">
+                    <p>To align the layers, check the box to automatically find the base frequency of the sound, or view the graphs and manually input the base frequency.<br>Each layer is one wave from the .wav file, so the number of layers and each layer's height determines the height of the sculpture.<br>The depth of the texture determines how much the waveform affects the cylinder, or how pronounced the texture is.</p>
+                </div>
+            </div>
+            <div id="div14">
+                <input type="submit" name="makesoundvase" value="Upload data" class="button5">
+                <input type="submit" name="download" value="Download {{filename}} STL" class="button5">
+                <input type="submit" name="downloaddefaults" value="Download default sounds" class="button5">
+            </div>
+            <div id="div12">
+                <p>Carl Osborne : Soundvase</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quarterdiv" id="div4">
+        <div class="insidebox">
+            <div id="graphandcaption">
+                <div id="div8">
+                    <img src="/static/waveformbig/{{name}}_{{filename}}.png" alt="Waveform of the whole sound file" class="graph" width="auto" height="auto">
+                </div>
+                <div>
+                    <div id="div9">
+                        <p><button onclick="waveformbig();" class="button2">Large waveform</button></p>
+                        <p><button onclick="waveformsmall();" class="button2">Small waveform</button></p>
+                        <p><button onclick="fftbig();" class="button2">Large frequency graph</button></p>
+                        <p><button onclick="fftsmall();" class="button2">Small frequency graph</button></p>
+                    </div>
+                    <div id="div10">
+                        <p>Waveform of the whole sound file: this graph represents the verticle shape your vase could take</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

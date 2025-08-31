@@ -1,0 +1,23 @@
+{% extends "base.html.j2" %} <!--inherits the base html skeleton-->
+
+{% block body %}
+<p id="title">Soundvase</p>
+<div id="box">
+    <div id="insidebox">
+        <form action="." method="POST"> <!--this is a post method form-->
+            <div class="center"> <!--for formatting-->
+                <input type="email" placeholder="Email" name="name" class="textbox"/> <!--client-side validation of the name textbox-->
+            </div>
+            <div class="center">
+                <input type="password" placeholder="Password" name="password" class="textbox"/> <!--client-side validation of password textbox-->
+            </div>
+            <div class="center">
+                <button type="submit" name="log in" value="Sign Up / Log In" class="login button">Sign up / log in</button> <!--submit button, name telling the server it is to log in-->
+            </div>
+            <div class="center">
+                <button type="submit" name="guest" value="Continue as Guest" class="button">Continue as guest</button> <!--submit button, name telling the server it is to log in-->
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

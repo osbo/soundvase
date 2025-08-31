@@ -1,0 +1,51 @@
+#Carl Osborne, Honors PreCalc, 5/18/22
+#Special Topics Project: DiffEq Solver part II
+#Program generates and checks a curve of a chosen differential equation using Euler's method with some specifications from the user.
+
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+print("This program finds a curve that is described by a differential equation.")
+print("The approximation is then compared to the equation's actual solution")
+print("Choose from the differential equations below:")
+print("Equation 1: dy/dx = (1-y/5)*y")
+print("")
+print("Enter the number of the option you want to see: ")
+equation = int(input())
+print("Enter a value between -10 and 10 for the initial x-coordinate: ")
+initialx = float(input())
+print("Enter a value between -10 and 10 for the initial y-coordinate: ")
+initialy = float(input())
+print("Plot points of the actual solution? T/F: ")
+toplot = input()
+if toplot == "T" or toplot == "t":
+    toplot = True
+elif toplot == "F" or toplot == "f":
+    toplot = False
+if toplot:
+    print("Enter the number of points to plot: ")
+    numpoints = int(input())
+resolution = 500
+if equation == 1:
+    if initialx < 0:
+        A = (5-initialy)/initialy/math.e**initialx
+    else:
+        A = (5-initialy)/initialy*math.e**initialx
+    print("An actual solution to this differential equation that contains the point ("+str(initialx)+","+str(initialy)+") is y = 5/(1+"+str(A)+"e^-x).")
+    realcurvex = np.arange(initialx,10,((11-initialx)/numpoints))
+    realcurvey = 5/(1+A*math.e**(0-realcurvex))
+    eulersx = np.arange(initialx,10,((10-initialx)/resolution))
+    eulersy = np.array([initialy])
+    y = initialy
+    for i in range(resolution-1):
+        y = y + (1-y/5)*y*((10-initialx)/resolution)
+        eulersy = np.append(eulersy,y)
+if toplot:
+    plt.plot(realcurvex,realcurvey,"x")
+plt.plot(eulersx,eulersy)
+plt.title("The curve shows the result of Euler's method\nand the x's are the outputs of the actual solution.")
+plt.grid()
+plt.xlim([-10,10])
+plt.ylim([-10,10])
+plt.show()
