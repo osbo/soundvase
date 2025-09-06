@@ -4,19 +4,17 @@
 
 A web application that transforms audio files into 3D-printable ceramic vases through real-time FFT analysis, waveform mapping, and interactive 3D visualization. This project demonstrates skillful signal processing, 3D geometry generation, and full-stack web development, creating a bridge between digital audio and physical ceramic art.
 
-![Soundvase Interface - Main application interface showing 3D viewer, parameter controls, and real-time graphs]
-
 ## Project Overview
 
 Soundvase converts audio characteristics into physical texture through a multi-stage pipeline:
+
+![IMG_0073](https://github.com/user-attachments/assets/e47392c9-5f57-4c3c-a99b-1f8418a7a8c0)
 
 1. **Real-time FFT Analysis** - Extracts dominant frequencies and spectral characteristics
 2. **Waveform-to-Geometry Mapping** - Projects audio data onto cylindrical surfaces
 3. **Interactive 3D Visualization** - WebGL-based real-time preview with Three.js
 4. **STL Generation** - 3D-printable file output for ceramic manufacturing
 5. **Physical Realization** - Porcelain 3D printing and glazing
-
-<img width="1120" height="586" alt="Screen_Shot_2022-05-30_at_9 39 44_PM" src="https://github.com/user-attachments/assets/cae21a1e-160e-4cba-91ce-e87952c9623f" />
 
 <img width="1172" height="582" alt="Screen_Shot_2022-05-30_at_9 39 55_PM" src="https://github.com/user-attachments/assets/bdc10836-50e5-497d-bc5c-6316c7c491af" />
 
@@ -105,7 +103,7 @@ The system provides 7 key parameters for artistic control:
 
 The project extends beyond digital visualization to physical ceramic art:
 
-![IMG_0073](https://github.com/user-attachments/assets/e47392c9-5f57-4c3c-a99b-1f8418a7a8c0)
+![IMG_2300](https://github.com/user-attachments/assets/2200835b-c2d1-4f18-9fbc-82f6aec5a83d)
 
 **Manufacturing Process:**
 1. **STL Generation** - Optimized mesh for 3D printing
@@ -113,13 +111,11 @@ The project extends beyond digital visualization to physical ceramic art:
 3. **Glazing** - Traditional ceramic finishing techniques
 4. **Firing** - Kiln processing for final durability
 
-![IMG_2300](https://github.com/user-attachments/assets/2200835b-c2d1-4f18-9fbc-82f6aec5a83d)
+![IMG_1770](https://github.com/user-attachments/assets/652c5793-6ecb-4152-b00e-e970098d9142)
 
 ## User Interface Design
 
-The web interface provides a comprehensive workflow:
-
-![Interface Layout - Four-quadrant layout showing 3D viewer, controls, file upload, and real-time graphs]
+The web interface provides a comprehensive workflow.
 
 **Four-Quadrant Layout:**
 - **Top Left** - Interactive 3D model viewer
