@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A sophisticated web application that transforms audio files into 3D-printable ceramic vases through real-time FFT analysis, waveform mapping, and interactive 3D visualization. This project demonstrates advanced signal processing, 3D geometry generation, and full-stack web development, creating a bridge between digital audio and physical ceramic art.
+A web application that transforms audio files into 3D-printable ceramic vases through real-time FFT analysis, waveform mapping, and interactive 3D visualization. This project demonstrates skillful signal processing, 3D geometry generation, and full-stack web development, creating a bridge between digital audio and physical ceramic art.
 
 ![Soundvase Interface - Main application interface showing 3D viewer, parameter controls, and real-time graphs]
 
@@ -31,9 +31,9 @@ Soundvase converts audio characteristics into physical texture through a multi-s
 
 **Signal Processing Algorithm:**
 
-The core algorithm begins with FFT analysis to extract frequency characteristics from the audio data. The system normalizes the audio signal and applies a real FFT to identify dominant frequencies. This frequency information determines the resolution of the cylindrical mapping, where higher frequencies create more detailed surface textures.
+The core algorithm begins with FFT analysis to extract frequency characteristics from the audio data. The system normalizes the audio signal and applies a real FFT to identify dominant frequencies. This dominant frequency is used to determine the base wavelength, to align the geometric layers.
 
-The cylindrical coordinate mapping transforms the 1D audio waveform into 3D space using mathematical relationships between frequency, sample rate, and desired geometric parameters. Each audio cycle becomes a horizontal layer in the vase, with the waveform amplitude directly controlling the radial displacement from the base cylinder.
+The cylindrical coordinate mapping transforms the 1D audio waveform into 3D space: each audio cycle becomes a horizontal layer in the vase, with the waveform amplitude directly controlling the radial displacement from the base cylinder.
 
 The texture generation process samples the audio data at calculated intervals, averaging amplitude values to create smooth surface variations. This approach ensures that the resulting 3D geometry accurately represents the audio characteristics while maintaining manufacturable surface topology.
 
@@ -71,9 +71,9 @@ The system uses a MySQL database with two primary tables for user management and
 
 The system implements intelligent frequency analysis that can either:
 - **Automatically detect** the dominant frequency using FFT peak analysis
-- **Manually specify** frequency for precise artistic control
+- **Manually specify** frequency for precise artistic control, adjusting from the detected frequency.
 
-This dual approach allows both novice users and audio professionals to achieve optimal results. The automatic detection algorithm scans the frequency domain for the highest amplitude peak within the audible range, providing intelligent defaults for users unfamiliar with audio analysis. Manual frequency specification enables precise artistic control for users who understand the relationship between frequency and visual texture.
+The automatic detection algorithm scans the frequency domain for the highest amplitude peak within the audible range, providing intelligent defaults for users unfamiliar with audio analysis. Manual frequency specification enables precise artistic control for users who understand the relationship between frequency and visual texture.
 
 ### Cylindrical Waveform Mapping
 
@@ -128,28 +128,6 @@ The web interface provides a comprehensive workflow:
 - **Interactive Controls** - Dynamic parameter adjustment with live preview
 - **Download Options** - STL files and default sound library
 
-## Engineering Trade-offs: Functionality vs. Performance
-
-This project demonstrates deliberate engineering decision-making through several key trade-offs:
-
-### Real-time Processing vs. Quality
-
-**Decision**: Prioritize real-time feedback over maximum quality
-**Rationale**: User experience requires immediate visual feedback for parameter adjustment
-**Implementation**: Optimized FFT algorithms with configurable resolution
-
-### Web-based vs. Desktop Application
-
-**Decision**: Web-based deployment for accessibility
-**Rationale**: Enables immediate access without installation barriers
-**Implementation**: Client-server architecture with session management
-
-### General-purpose vs. Specialized Audio Processing
-
-**Decision**: Focus on musical audio characteristics
-**Rationale**: Musical sounds provide the most visually interesting results
-**Implementation**: Optimized frequency ranges and parameter defaults
-
 ## Technical Challenges Solved
 
 ### 1. Real-time STL Generation
@@ -176,22 +154,6 @@ This project demonstrates deliberate engineering decision-making through several
 **Solution**: Flask session management with MySQL persistence
 **Result**: Seamless user experience with data persistence
 
-## Future Enhancements
-
-### Planned Technical Improvements
-
-1. **GPU Acceleration** - WebGL compute shaders for real-time processing
-2. **Advanced Materials** - Procedural texture generation based on audio characteristics
-3. **Multi-track Support** - Separate frequency bands for different vase regions
-4. **Machine Learning** - AI-powered parameter optimization
-
-### Artistic Extensions
-
-1. **Color Mapping** - Frequency-to-color visualization
-2. **Animation** - Real-time audio playback with animated 3D models
-3. **Collaborative Features** - Shared sculpture galleries
-4. **Export Formats** - Support for additional 3D printing technologies
-
 ## Summary
 
 This project demonstrates expertise in:
@@ -214,8 +176,6 @@ This project demonstrates expertise in:
 - **Novel Application Domain**: Unique intersection of audio analysis and ceramic art
 - **Technical Creativity**: Mathematical mapping of 1D audio to 3D surfaces
 - **Artistic Expression**: Enabling new forms of audio-visual-tactile art
-
-The combination of advanced signal processing, real-time 3D graphics, and physical manufacturing makes this project a compelling demonstration of interdisciplinary engineering skills, creative problem-solving, and technical innovation.
 
 ---
 
