@@ -16,7 +16,12 @@ Soundvase converts audio characteristics into physical texture through a multi-s
 4. **STL Generation** - 3D-printable file output for ceramic manufacturing
 5. **Physical Realization** - Porcelain 3D printing and glazing
 
-![3D Generated Vase - Computer-generated STL model showing audio waveform mapped to cylindrical surface]
+<img width="1120" height="586" alt="Screen_Shot_2022-05-30_at_9 39 44_PM" src="https://github.com/user-attachments/assets/cae21a1e-160e-4cba-91ce-e87952c9623f" />
+
+<img width="1172" height="582" alt="Screen_Shot_2022-05-30_at_9 39 55_PM" src="https://github.com/user-attachments/assets/bdc10836-50e5-497d-bc5c-6316c7c491af" />
+
+<img width="664" height="699" alt="Screen_Shot_2022-06-01_at_1 04 39_AM" src="https://github.com/user-attachments/assets/42862e00-fc2e-4067-86e6-816558301358" />
+
 
 ## Technical Architecture
 
@@ -100,7 +105,7 @@ The system provides 7 key parameters for artistic control:
 
 The project extends beyond digital visualization to physical ceramic art:
 
-![Ceramic Vase Set - Collection of 3D printed porcelain vases with different audio textures and glazes]
+![IMG_0073](https://github.com/user-attachments/assets/e47392c9-5f57-4c3c-a99b-1f8418a7a8c0)
 
 **Manufacturing Process:**
 1. **STL Generation** - Optimized mesh for 3D printing
@@ -108,7 +113,7 @@ The project extends beyond digital visualization to physical ceramic art:
 3. **Glazing** - Traditional ceramic finishing techniques
 4. **Firing** - Kiln processing for final durability
 
-![Close-up Detail - Detailed view showing the texture variations created by different audio frequencies]
+![IMG_2300](https://github.com/user-attachments/assets/2200835b-c2d1-4f18-9fbc-82f6aec5a83d)
 
 ## User Interface Design
 
